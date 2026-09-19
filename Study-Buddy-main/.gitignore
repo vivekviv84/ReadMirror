@@ -1,0 +1,24 @@
+.venv
+**/__pycache__
+config.env
+logs/
+.streamlit/
+
+# Database / SQLite temporary files
+*.db
+*.sqlite3
+
+
+# Node modules
+client/node_modules/
+
+# Next.js
+client/.next/
+client/out/
+client/build/
+client/.env.local
+
+manage_supabase.py
+dev.sh
+src/README.md
+test.md

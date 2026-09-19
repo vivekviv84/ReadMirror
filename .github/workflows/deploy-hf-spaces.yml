@@ -1,0 +1,29 @@
+name: Deploy Backend to Hugging Face Spaces
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to deploy'
+        required: true
+        default: 'main'
+
+  schedule:
+    - cron: '0 1 * * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || 'main' }}
+          fetch-depth: 0
+
+      - name: Deploy src only to Hugging Face Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git subtree split --prefix src -b hf-deploy
+          git push --force https://user:$HF_TOKEN@huggingface.co/spaces/${{ secrets.HF_SPACE_ID }} hf-deploy:main

@@ -1,0 +1,43 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision
+
+arxiv==2.2.0
+wikipedia==1.4.0
+duckduckgo-search==8.1.1
+validators==0.35.0
+streamlit==1.45.0
+
+langchain==0.3.25
+langchain-community==0.3.4
+langchain-google-genai==2.1.5
+langchain-openai==0.3.35
+langchain-huggingface==0.2.0
+langchain-text-splitters==0.3.11
+python-dotenv
+sentence-transformers
+numpy
+
+PyPDF2==3.0.1
+unstructured==0.18.15
+
+fastapi
+uvicorn
+python-multipart
+pydantic
+httpx
+PyJWT>=2.8.0
+transformers
+sacremoses
+sentencepiece
+omegaconf
+
+# ── ASR Models ──────────────────────────────────────────
+nemo_toolkit[asr]
+soundfile
+librosa
+
+# SQLite is provided by the Python standard library.
+
+# ── Logging ─────────────────────────────────────────────
+loguru
